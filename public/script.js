@@ -72,7 +72,7 @@ async function fetchNotes(page = 0) {
                 <ul tabindex="0" class="dropdown-content menu bg-base-200 rounded-box z-[1] w-52 p-2 shadow">
                   <li><a id="shareNote">Share</a></li>
                   ${
-                    note.secretCode
+                    note.canEdit
                       ? `
                     <li><a>Edit</a></li>
                     <li class="text-error"><a>Delete</a></li>

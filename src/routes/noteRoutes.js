@@ -8,11 +8,12 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   try {
     const validatedData = noteSchema.parse(req.body);
-
+    const canEdit = validatedData.secretCode ? true : false
     const encodedData = {
       name: encode(validatedData.name),
       message: encode(validatedData.message),
       secretCode: encode(validatedData.secretCode),
+      canEdit,
     };
 
     const note = new Note(encodedData);
@@ -40,7 +41,16 @@ router.get("/", async (req, res) => {
       .skip(skip)
       .limit(limit)
       .sort({ createdAt: -1 });
-    res.json(notes);
+
+    const definedNotes = notes.map((note) => ({
+      _id: note._id,
+      name: note.name,
+      message: note.message,
+      createdAt: note.createdAt,
+      canEdit: note.canEdit,
+    }));
+
+    res.json(definedNotes);
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch notes" });
   }

@@ -4,6 +4,7 @@ const noteSchema = new mongoose.Schema({
   name: { type: String, required: true },
   message: { type: String, required: true },
   secretCode: { type: String },
+  canEdit: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now },
 });
 
