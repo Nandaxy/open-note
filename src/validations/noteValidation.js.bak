@@ -9,8 +9,7 @@ const noteSchema = z.object({
     .string()
     .min(1, { message: "Pesan wajib diisi" })  
     .max(500, { message: "Pesan harus kurang dari 500 karakter" }),  
-  secretCode: z.string().max(100, { message: "Kode rahasia tidak boleh lebih dari 100 karakter" }),
-  imageUrl: z.string().url({ message: "URL gambar tidak valid" }).optional(),  
+  secretCode: z.string().max(100, { message: "Kode rahasia tidak boleh lebih dari 100 karakter" }),  
 });
 
 export default noteSchema;

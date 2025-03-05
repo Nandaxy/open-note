@@ -93,7 +93,7 @@ noteElement.innerHTML = `
         <img 
             src="${note.imageUrl}" 
             alt="Posted image" 
-            class="w-full h-full object-cover object-fit rounded-lg"
+            class="w-full h-full object-cover object-center rounded-lg"
             loading="lazy"
         />
     </div>

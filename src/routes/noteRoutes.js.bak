@@ -52,7 +52,6 @@ router.get("/", async (req, res) => {
       message: note.message,
       createdAt: note.createdAt,
       canEdit: note.canEdit,
-      imageUrl: note.imageUrl,
     }));
 
     res.json(definedNotes);
