@@ -28,13 +28,14 @@ mongoose
 //  res.sendFile(path.join(__dirname, "./public/index.html"));
 //});
 
+app.get("/", (req, res) => {
+  res.status(302).redirect("/maintenance");
+});
+
 app.get("/maintenance", (req, res) => {
   res.sendFile(path.join(__dirname, "./public/bug.html"));
 });
 
-app.get("/", (req, res) => {
-  res.redirect("/maintenance");
-});
 // Start server
 const PORT = 3000;
 app.listen(PORT, () => {
