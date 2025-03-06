@@ -88,12 +88,12 @@ noteElement.innerHTML = `
 
       ${
         note.imageUrl
-          ? `<div class="max-h-80 w-full max-w-md mx-auto">
+          ? `<div class="max-h-96">
     <div class="relative pb-[133.33%]"> 
         <img 
             src="${note.imageUrl}" 
             alt="Posted image" 
-            class="w-full h-full object-cover object-fit rounded-lg"
+            class="w-full h-96 object-cover object-fit rounded-lg"
             loading="lazy"
         />
     </div>

@@ -4,19 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Open Note - Timggalkan Pesan Anda Disini</title>
-     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      rel="icon"
+      href="https://png.pngtree.com/recommend-works/png-clipart/20240517/ourmid/pngtree-loading-cat-meme-sticker-illustration-png-image_12484737.png"
+      type="image/x-icon"
+    />
     <link href="/style.css" rel="stylesheet" />
-    <link href="/custom.css" rel="stylesheet" />
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <link href="/custom.css" rel="stylesheet" /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <head>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
+      <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+    </head>
   </head>
   <body class="min-h-screen bg-base-200 transition-all duration-300">
     <div class="drawer">
@@ -45,7 +49,7 @@
             <span class="text-lg font-bold">Open Note</span>
             <span class="text-xs ml-2 text-base-content/70">Edition</span>
           </div>
-        
+
           <div class="flex-none hidden lg:block mr-2">
             <ul class="menu menu-horizontal">
               <li>
@@ -273,32 +277,32 @@
             <span class="label-text pl-3 mr-auto">Anonym</span>
           </label>
         </div>
-     
-<div class="form-control mt-4">
-  <label class="label">
-    <span class="label-text">Pesan Anda</span>
-  </label>
-  <textarea
-    id="message"
-    placeholder="Tulis pesan Anda di sini"
-    class="textarea textarea-bordered h-24"
-    required
-  ></textarea>
-</div  >
-<div class="p-2 ">
 
-   <input type="file" id="fileInput" class="hidden" accept="image/*" />
+        <div class="form-control mt-4 flex flex-col">
+          <label class="label">
+            <span class="label-text">Pesan Anda</span>
+          </label>
+          <textarea
+            id="message"
+            placeholder="Tulis pesan Anda di sini"
+            class="textarea textarea-bordered h-24"
+            required
+          ></textarea>
+        </div>
+        <div class="p-2">
+          <input type="file" id="fileInput" class="hidden" accept="image/*" />
 
-  <div id="filePreview" class="mt-4 px-4"></div>
+          <div id="filePreview" class="mt-4 px-4"></div>
 
-  <button
-    id="addImageButton"
-    class="mt-2 flex items-center justify-center  bg-blue-100 text-white rounded-full shadow-md hover:bg-blue-600"
-  >
-    <i class="fas fa-image text-2xl w-20 h-20"></i> <!-- Ikon gambar -->
-  </button>
-
-</div>
+          <button
+            id="addImageButton"
+            class="mt-1 flex items-center justify-center rounded-full shadow-md cursor-pointer tooltip tooltip-right"
+            data-tip="Tambah Gambar"
+          >
+            <i class="fas fa-image text-xl"></i>
+            <!-- Ikon gambar -->
+          </button>
+        </div>
         <div class="modal-action">
           <button type="button" class="btn btn-primary" id="submitNote">
             <i class="fas fa-paper-plane mr-2"></i> Kirim Catatan
@@ -318,41 +322,73 @@
       <div class="modal-box">
         <h3 class="font-bold text-lg text-primary mb-4">Edit Catatan</h3>
         <form id="editNoteForm" class="space-y-4">
-          <input type="hidden" id="edit-note-id">
+          <input type="hidden" id="edit-note-id" />
           <div class="form-control">
             <label class="label" for="edit-name">
               <span class="label-text">Nama Anda</span>
             </label>
-            <input type="text" id="edit-name" class="input input-bordered w-full" required>
+            <input
+              type="text"
+              id="edit-name"
+              class="input input-bordered w-full"
+              required
+            />
           </div>
           <div class="form-control">
             <label class="label" for="edit-message">
               <span class="label-text">Pesan Anda</span>
             </label>
-            <textarea id="edit-message" class="textarea textarea-bordered h-24" required></textarea>
+            <textarea
+              id="edit-message"
+              class="textarea textarea-bordered h-24"
+              required
+            ></textarea>
           </div>
           <div class="form-control">
             <label class="label" for="edit-secret-code">
               <span class="label-text">Secret Code (Tidak dapat diubah)</span>
             </label>
-            <input type="text" id="edit-secret-code" class="input input-bordered w-full" disabled>
+            <input
+              type="text"
+              id="edit-secret-code"
+              class="input input-bordered w-full"
+              disabled
+            />
           </div>
           <div class="modal-action">
             <button type="submit" class="btn btn-primary">
               <i class="fas fa-save mr-2"></i> Simpan Perubahan
             </button>
-            <button type="button" class="btn" onclick="document.getElementById('edit-note-modal').close()">Tutup</button>
+            <button
+              type="button"
+              class="btn"
+              onclick="document.getElementById('edit-note-modal').close()"
+            >
+              Tutup
+            </button>
           </div>
         </form>
       </div>
     </dialog>
     <!-- Footer -->
-    <footer class="footer footer-center bg-base-300 text-base-content p-4 mt-10">
+    <footer
+      class="footer footer-center bg-base-300 text-base-content p-4 mt-10"
+    >
       <aside>
         <p>Copyright © 2024 - Open Note</p>
       </aside>
     </footer>
+    <script>
+      const getStatus = async () => {
+        const isOk = await fetch("/status").then((res) => res.json());
+        if (!isOk.status) {
+          // redirect ke /error
+          window.location.href = "/maintenance";
+        }
+        return isOk;
+      };
+      getStatus();
+    </script>
     <script src="/script.js"></script>
   </body>
 </html>
-
