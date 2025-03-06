@@ -8,17 +8,17 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   try {
     const validatedData = noteSchema.parse(req.body);
-    const canEdit = validatedData.secretCode ? true : false
+    const canEdit = validatedData.secretCode ? true : false;
     const encodedData = {
       name: encode(validatedData.name),
       message: encode(validatedData.message),
       secretCode: encode(validatedData.secretCode),
       canEdit,
-      imageUrl: encode(validatedData.imageUrl)
+      imageUrl: req.body.imageUrl,
     };
-    
-    console.log("jjjj")
-    console.log(encodedData.imageUrl)
+
+    console.log("jjjj");
+    console.log(encodedData.imageUrl);
 
     const note = new Note(encodedData);
     await note.save();
@@ -130,4 +130,3 @@ router.put("/:id", async (req, res) => {
 });
 
 export default router;
-
